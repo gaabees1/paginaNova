@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu do Restaurante</title>
+    <link rel="shortcut icon" href="Capturar.PNG" type="image/x-icon">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: black;
+            color: white;
+            padding: 10px 20px;
+        }
+
+        .header img {
+            width: 200px;
+            /* Ajuste o tamanho da imagem */
+            height: 150px;
+            margin-right: 15px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .restaurant-name {
+            font-size: 24px;
+            margin-left: 10px;
+        }
+
+        .auth-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 15px;
+            font-size: 18px;
+        }
+
+        .auth-links a:hover {
+            text-decoration: underline;
+        }
+
+        .content-box {
+            background-color: white;
+            border-radius: 15px;
+            /* Borda arredondada */
+            padding: 20px;
+            /* Espaçamento interno */
+            margin: 20px;
+            /* Espaçamento externo */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            /* Sombra para destaque */
+        }
+
+        .content-box2 {
+            background-color: rgb(0, 0, 0);
+            border-radius: 15px;
+            /* Borda arredondada */
+            padding: 20px;
+            /* Espaçamento interno */
+            margin: 20px;
+            /* Espaçamento externo */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            /* Sombra para destaque */
+        }
+
+
+        .img1 {
+            width: 200px;
+            height: 150px;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 15px;
+        }
+
+        .img2 {
+            width: 500px;
+            height: 350px;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 15px;
+        }
+
+        p {
+            padding: 15px;
+
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Playwrite+DE+Grund:wght@100..400&display=swap');
+
+        .fonte {
+            font-family: "Playwrite DE Grund", cursive;
+            font-optical-sizing: auto;
+            font-weight: weight;
+            font-style: normal;
+            font-size: 30px;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .dropbtn {
+            background-color: transparent;
+            color: white;
+            padding: 10px 15px;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 160px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+        
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+        
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="logo">
+            <img class="img1" src="Capturar.PNG" alt="">
+            <div class="fonte">IFon</div>
+        </div>
+        <div class="auth-links">
+            <a href="carrinho.html">Carrinho de compras</a>
+            <a href="login.html">Login</a>
+            <a href="cadastro.html">Cadastro</a>
+        </div>
+    </div>
+    
+    <div class="header">
+        <div class="auth-links">
+            <div class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">Outros modelos</a>
+                <div class="dropdown-content">
+                    <a href="#">IFon XIX</a>
+                    <a href="#">IFon 18</a>
+                    <a href="#">IFon 17</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">Duvidas frequentes</a>
+                <div class="dropdown-content">
+                    <a href="#"></a>
+                    <a href="#">A memória é boa?</a>
+                    <a href="#">Tem quanto de RAM</a>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <br><br><br>
+
+    <div class="content-box">
+        <img src="ifon.PNG" alt="">
+
+    </div>
+
+    <footer>
+        <ul style="color: white;" class="content-box2">
+            <li>E-mail</li>
+            <br>
+            <li>Contato:</li>
+            <br>
+            <li>Avalie nosso site </li>
+            <br>
+            <li>Sobre Nós
+                Bem-vindo ao Gourmet Burguer! Oferecemos uma experiência gastronômica única com hambúrgueres artesanais
+                feitos com ingredientes frescos e de alta qualidade. Explore nosso menu, descubra combinações deliciosas
+                e leia as avaliações de nossos clientes. Sinta o sabor em cada mordida!</li>
+        </ul>
+    </footer>
+
+</body>
+
+</html>

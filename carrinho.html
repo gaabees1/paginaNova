@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho de Compras</title>
+    <link rel="stylesheet" href="carrinho.css">
+</head>
+
+<body>
+    <div class="header">
+        <div class="logo">
+            <img src="Capturar.PNG" alt="">
+            <div class="fonte">IFon</div>
+        </div>
+        <div class="auth-links">
+            <a href="index.html">Página inicial</a>
+            <a href="login.html">Login</a>
+            <a href="cadastro.html">Cadastro</a>
+        </div>
+    </div>
+
+    <br><br><br>
+
+    <div class="content-box">
+        <h2>Carrinho de Compras</h2>
+        <section class="carrinho">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Produto</th>
+                        <th>Quantidade</th>
+                        <th>Preço Unitário</th>
+                        <th>Total</th>
+                        <th>Ação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Produto 1 -->
+                    <tr>
+                        <td><img src="coca.jpg" alt=""></td>
+                        <td>Coca-Cola</td>
+                        <td>
+                            <input type="number" value="1" min="1" class="quantidade">
+                        </td>
+                        <td class="preco-unitario">R$ 5,99</td>
+                        <td class="preco-total">R$ 5,99</td>
+                        <td>
+                            <button class="remover-produto">Remover</button>
+                        </td>
+                    </tr>
+
+                    <!-- Produto 2 -->
+                    <tr>
+                        <td><img src="lanche.png" alt=""></td>
+                        <td>Hamburguer</td>
+                        <td>
+                            <input type="number" value="2" min="1" class="quantidade">
+                        </td>
+                        <td class="preco-unitario">R$ 32,99</td>
+                        <td class="preco-total">R$ 65,98</td>
+                        <td>
+                            <button class="remover-produto">Remover</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="total-final">
+                <h3>Total Final: <span id="total-final">R$ 110,00</span></h3>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Função para atualizar o total de cada linha
+        function updateRowTotal(row) {
+            const quantityInput = row.querySelector('.quantidade');
+            const unitPriceElement = row.querySelector('.preco-unitario');
+            const totalPriceElement = row.querySelector('.preco-total');
+
+            const quantity = parseInt(quantityInput.value);
+            const unitPrice = parseFloat(unitPriceElement.textContent.replace('R$', '').replace(',', '.'));
+            const totalPrice = quantity * unitPrice;
+
+            totalPriceElement.textContent = 'R$ ' + totalPrice.toFixed(2).replace('.', ',');
+            return totalPrice;
+        }
+
+        // Função para atualizar o total final
+        function updateTotalFinal() {
+            const rows = document.querySelectorAll('tbody tr');
+            let grandTotal = 0;
+
+            rows.forEach(row => {
+                const rowTotal = updateRowTotal(row);
+                grandTotal += rowTotal;
+            });
+
+            document.getElementById('total-final').textContent = 'R$ ' + grandTotal.toFixed(2).replace('.', ',');
+        }
+
+        // Função para remover item
+        function removeItem(event) {
+            const buttonClicked = event.target;
+            const row = buttonClicked.parentElement.parentElement;
+            row.remove(); // Remove a linha do carrinho
+            updateTotalFinal(); // Atualiza o total final
+        }
+
+        // Adiciona eventos para remover itens
+        document.querySelectorAll('.remover-produto').forEach(button => {
+            button.addEventListener('click', removeItem);
+        });
+
+        // Adiciona eventos para atualizar o total quando a quantidade muda
+        document.querySelectorAll('.quantidade').forEach(input => {
+            input.addEventListener('change', updateTotalFinal);
+        });
+
+        // Inicializa o total ao carregar a página
+        updateTotalFinal();
+    </script>
+</body>
+
+</html>
